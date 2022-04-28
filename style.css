@@ -13,27 +13,24 @@ body {
 }
 header {
   background-color: #ffffff;
-  position: absolute;
-  width: 100%;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  line-height: 1;
 }
-#header-wrapper {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-@media (min-width: 700px) {
-  #header-wrapper {
+@media screen and (min-width: 800px) {
+  nav {
     max-width: 1120px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
   }
 }
 #logo-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 #logo-container #logo {
   margin: 0;
@@ -54,7 +51,10 @@ header {
   font-size: 1.5rem;
   cursor: pointer;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
+  #logo-container {
+    padding: 0;
+  }
   #logo-container #burger {
     display: none;
   }
@@ -69,39 +69,52 @@ a {
 a:hover {
   color: #645cff;
 }
-nav,
 ul {
   list-style: none;
+  padding: 0;
 }
-nav {
+#pages {
   margin: 0;
   height: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
-nav a {
+#pages a {
   padding: 0.75rem 1rem;
   display: block;
   color: #334155;
 }
-nav a:hover {
+#pages a:hover {
   background: #a29dff;
   padding-left: 1.5rem;
 }
-@media screen and (min-width: 700px) {
-  nav {
+@media screen and (min-width: 800px) {
+  #pages {
     height: auto;
     display: flex;
   }
+  #pages a {
+    margin: 0 0.5rem;
+    padding: 0;
+  }
+  #pages a:hover {
+    background-color: transparent;
+    padding: 0;
+    color: #645cff;
+  }
 }
-nav.show-pages {
-  height: 11rem;
-  margin-bottom: -4px;
+#pages.show-pages {
+  height: 10rem;
+}
+@media screen and (min-width: 800px) {
+  #pages.show-pages {
+    height: auto;
+  }
 }
 #social-links {
   display: none;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
   #social-links {
     display: flex;
     padding: 0;
