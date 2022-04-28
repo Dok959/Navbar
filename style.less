@@ -1,0 +1,138 @@
+@body-bg-color: #f8fafc;
+@header-bg-color: #ffffff;
+@font-family: Roboto, sans-serif;
+@color-accent: #645cff;
+@text-color: #0f172a;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: @font-family;
+    font-size: 16px;
+    color: @text-color;
+    font-weight: 400;
+}
+
+body {
+    background-color: @body-bg-color;
+    margin: 0;
+}
+
+header {
+    background-color: @header-bg-color;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-height: max-content;
+    transition: all 0.3s ease-in-out;
+}
+
+#header-wrapper {
+    max-width: 1120px;
+    min-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    @media (max-width: 700px) {
+        & {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+nav,
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+
+    @media (max-width: 700px) {
+        & {
+            display: none;
+        }
+    }
+}
+
+#logo-container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 700px) {
+        & {
+            width: 100%;
+        }
+    }
+}
+
+#logo {
+    margin: 0;
+    text-transform: capitalize;
+    line-height: 1.3;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    & span {
+        font-weight: 600;
+        color: @color-accent;
+    }
+}
+
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #334155;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: @color-accent;
+    }
+}
+
+.show-pages {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 700px) {
+        & {
+            flex-direction: row;
+        }
+    }
+}
+
+#social-links a {
+    color: @color-accent;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+#burger {
+    display: none;
+    border: none;
+    background-color: transparent;
+    color: @color-accent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 700px) {
+        & {
+            display: block;
+        }
+    }
+}
