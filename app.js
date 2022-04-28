@@ -1,3 +1,4 @@
+'use strict';
 const burger = document.querySelector('#burger');
 const pages = document.querySelector('#pages');
 
